@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="color-scheme" content="light" />
-  <meta name="description" content="Unlock the Vinted Reviewer option through Playful, then rate 4–5 Vinted products." />
-  <title>Become a Vinted Reviewer with Playful</title>
+  <meta name="description" content="Answer 3 questions. Up to £500 towards your Vinted basket or haul, after your email and 3–5 sponsor deals are verified." />
+  <title>Get £500 Towards Vinted</title>
   <link rel="icon" href="icon.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,9 +42,7 @@
     .chip.on { border-color:var(--teal); background:var(--chip); color:var(--teal); }
     main { width:min(100%,560px); margin:auto; padding:14px 16px calc(128px + env(safe-area-inset-bottom, 0px)); }
     .hero-card { position:relative; overflow:hidden; container-type:inline-size; padding:18px 18px 14px; border-radius:24px; color:#fff; background:radial-gradient(circle at 100% 0%,rgba(255,255,255,.28),transparent 40%),var(--teal); }
-    .hero-logos { display:block; width:48px; height:48px; overflow:hidden; border-radius:12px; }
-    .hero-logos img { width:52px; height:52px; margin:-2px; border-radius:14px; display:block; object-fit:cover; background:transparent; }
-    .hero-logos span { display:grid; place-items:center; width:24px; height:24px; border:1px solid rgba(255,255,255,.35); border-radius:50%; color:#fff; font-size:12px; font-weight:800; }
+    .hero-card img { width:48px; height:48px; border-radius:12px; display:block; }
     .hero-card h1 { margin-top:10px; font-size:clamp(28px,7.2cqi,38px); font-weight:800; line-height:.98; letter-spacing:-.04em; }
     .unlock-line { margin-top:8px; font-size:15px; font-weight:600; }
     .card-stats { display:grid; grid-template-columns:1fr 1fr 1fr; margin-top:12px; padding:8px 4px; border-radius:16px; background:rgba(0,0,0,.14); text-align:center; }
@@ -98,7 +96,6 @@
     .step { display:flex; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--line); border-radius:16px; background:#fff; text-align:left; }
     .step-icon { display:grid; place-items:center; width:44px; height:44px; flex:0 0 44px; border-radius:14px; background:#f3f7f7; }
     .step-icon svg { width:22px; height:22px; stroke:#123033; }
-    .step-icon img { width:32px; height:32px; border-radius:9px; object-fit:cover; }
     .step-copy { flex:1; min-width:0; }
     .step h3 { font-size:16px; font-weight:700; letter-spacing:-.02em; }
     .step p { margin-top:2px; color:var(--muted); font-size:13px; line-height:1.35; }
@@ -159,135 +156,819 @@
   <main>
     <section class="hero">
       <div class="hero-card">
-        <div class="hero-logos">
-          <img src="icon.webp" alt="Vinted" width="48" height="48" />
-        </div>
-        <h1>Become a<br />Vinted Reviewer</h1>
-        <p class="unlock-line">Unlock the reviewer option through Playful, then rate 4–5 Vinted products.</p>
-        <div class="card-stats" aria-label="Reviewer unlock steps">
-          <div><strong>1</strong><span>App install</span></div>
-          <div><strong>5 sec</strong><span>Keep open</span></div>
-          <div><strong>4–5</strong><span>Items to rate</span></div>
+        <img src="icon.webp" alt="" width="48" height="48" />
+        <h1>Get £500<br />towards Vinted</h1>
+        <p class="unlock-line">Covers your basket or haul. 3–5 deals first.</p>
+        <div class="card-stats" aria-label="Offer stats">
+          <div><strong>18K+</strong><span>Baskets</span></div>
+          <div><strong>4.8</strong><span>Rating</span></div>
+          <div><strong>~10 min</strong><span>In deals</span></div>
         </div>
       </div>
       <div class="hero-copy">
-        <img src="icon.webp" alt="Vinted" width="52" height="52" />
-        <h1>You can become a<br /><em>Vinted Reviewer</em></h1>
-        <p>Complete the short Playful unlock step, then rate 4–5 Vinted products.</p>
+        <img src="icon.webp" alt="" width="52" height="52" />
+        <h1>Up to <em>£500</em><br />towards Vinted</h1>
+        <p>Your basket or haul gets covered after the deals are verified.</p>
       </div>
     </section>
-    <section class="offer" aria-label="Vinted Reviewer access">
+    <section class="offer" aria-label="Vinted haul offer">
       <div class="offer-main">
-        <img src="icon.webp" alt="Vinted" width="54" height="54" />
-        <div class="offer-copy"><div class="offer-label">VINTED REVIEWER</div><div class="offer-title">Reviewer access</div><div class="offer-sub">Unlocked after the Playful app step</div></div>
-        <div class="amount"><strong>4–5</strong><span>ITEMS</span></div>
+        <img src="icon.webp" alt="" width="54" height="54" />
+        <div class="offer-copy"><div class="offer-label">VINTED · 192 LEFT</div><div class="offer-title">Your haul</div><div class="offer-sub">Email + 3–5 deals to unlock</div></div>
+        <div class="amount"><strong>£500</strong><span>MAX</span></div>
       </div>
-      <div class="reserve-bar"><strong>Access held</strong> for: <span class="reserve-time" id="reserve-time">10:00</span><span class="reserve-track"><span class="reserve-fill" id="reserve-fill"></span></span></div>
+      <div class="reserve-bar"><strong>Reserved</strong> for: <span class="reserve-time" id="reserve-time">10:00</span><span class="reserve-track"><span class="reserve-fill" id="reserve-fill"></span></span></div>
     </section>
     <section class="quiz" id="quiz" aria-live="polite">
       <div id="quiz-screen">
         <div class="quiz-meta"><span id="quiz-count">Question 1 of 3</span><span id="quiz-percent">33%</span></div>
         <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
-        <h2 id="quiz-title">What would you review on Vinted?</h2>
-        <p class="quiz-sub" id="quiz-sub">Pick the collection you’d review.</p>
+        <h2 id="quiz-title">What would the £500 go towards?</h2>
+        <p class="quiz-sub" id="quiz-sub">Pick the collection you’d shop.</p>
         <p class="quiz-context" id="quiz-context" hidden></p>
         <div class="options" id="options"></div>
       </div>
       <div class="final" id="final-screen" hidden>
-        <span class="final-badge">Vinted Reviewer access available</span>
+        <span class="final-badge">£500 towards Vinted reserved</span>
         <p class="result-echo" id="result-echo"></p>
-        <h2 class="section-title">Unlock it in 3 simple steps</h2>
+        <h2 class="section-title">Here’s how it works — 3 steps</h2>
         <div class="steps">
-          <article class="step"><div class="step-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/ce/a9/6bcea910-1e83-9281-54d6-c7f77b1f0fdb/Placeholder.mill/400x400bb-75.webp" alt="Playful" width="32" height="32" /></div><div class="step-copy"><h3>Sign up to Playful</h3><p>Create your Playful account so the Vinted Reviewer option can be added.</p></div><div class="step-number">1</div></article>
-          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10 18.5h4"/></svg></div><div class="step-copy"><h3>Install one app</h3><p>Open the app and leave it running for at least 5 seconds. This completes the unlock step.</p></div><div class="step-number">2</div></article>
-          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.2 9H20l-4.6 3.6L17.2 18 12 14.6 6.8 18l1.8-5.4L4 9h5.8L12 3.5z"/></svg></div><div class="step-copy"><h3>Rate 4–5 Vinted products</h3><p>Return to Playful, choose the Vinted Reviewer option and submit your product ratings.</p></div><div class="step-number">3</div></article>
+          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg></div><div class="step-copy"><h3>Enter your email</h3><p>So the cover can be matched to your basket.</p></div><div class="step-number">1</div></article>
+          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></div><div class="step-copy"><h3>Complete 3–5 deals</h3><p>This is what releases it. App sign-ups, surveys, or free trials.</p></div><div class="step-number">2</div></article>
+          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.2 9H20l-4.6 3.6L17.2 18 12 14.6 6.8 18l1.8-5.4L4 9h5.8L12 3.5z"/></svg></div><div class="step-copy"><h3>Basket gets covered</h3><p>Up to £500 towards the haul. Nothing is covered until the deals are verified.</p></div><div class="step-number">3</div></article>
         </div>
         <div class="verify">
-          <div class="verify-flag">The important bit</div>
-          <p id="picked-verify">Sign up, install one app, then keep it open for at least 5 seconds. The Vinted Reviewer option unlocks after that step is recorded.</p>
+          <div class="verify-flag">Verification required</div>
+          <p id="picked-verify">The £500 stays locked until the email and 3–5 deals are done. Read each deal’s terms so it counts.</p>
         </div>
-        <p class="claim-proof">One app unlock step — then the main task is rating 4–5 Vinted products.</p>
+        <p class="claim-proof">leah.fits · “Finished 3 deals. They covered £48.23 of my basket.”</p>
       </div>
     </section>
     <section class="community">
-      <h2>Vinted Reviewer Q&amp;A</h2>
+      <h2>What our community says</h2>
       <div class="tt-comments">
-        <div class="tt-comments-header"><span class="tt-comments-title">Common questions</span><span class="tt-comments-count">How it works</span></div>
+      <div class="tt-comments-header">
+        <span class="tt-comments-title">Comments</span>
+        <span class="tt-comments-count">2,847</span>
+      </div>
 
-        <div class="tt-thread">
-          <div class="tt-msg">
-            <div class="tt-pfp" style="background:#7c3aed">1</div>
-            <div class="tt-msg-body">
-              <div class="tt-user">Is there a long offer list?</div>
-              <div class="tt-text">No. Sign up to Playful, install one app and leave it open for at least 5 seconds. That is the unlock step for the Vinted Reviewer option.</div>
-              <div class="tt-meta"><span class="tt-time">Unlock step</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="tt-divider"></div>
-
-        <div class="tt-thread">
-          <div class="tt-msg">
-            <div class="tt-pfp" style="background:#007782">2</div>
-            <div class="tt-msg-body">
-              <div class="tt-user">What do reviewers actually do?</div>
-              <div class="tt-text">Choose the Vinted Reviewer option in Playful and rate 4–5 Vinted products. The product-rating task is the main activity.</div>
-              <div class="tt-meta"><span class="tt-time">Reviewer task</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="tt-divider"></div>
-
-        <div class="tt-thread">
-          <div class="tt-msg">
-            <div class="tt-pfp" style="background:#db2777">3</div>
-            <div class="tt-msg-body">
-              <div class="tt-user">Why keep the app open for 5 seconds?</div>
-              <div class="tt-text">Playful needs enough time to record the qualifying app install. Close it too quickly and the reviewer option may not unlock.</div>
-              <div class="tt-meta"><span class="tt-time">Tracking tip</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="tt-divider"></div>
-
-        <div class="tt-thread">
-          <div class="tt-msg">
-            <div class="tt-pfp" style="background:#16a34a">4</div>
-            <div class="tt-msg-body">
-              <div class="tt-user">Where does the Vinted option appear?</div>
-              <div class="tt-text">Return to your Playful dashboard after the app step. Once the install is recorded, select the Vinted Reviewer option and follow the rating prompts.</div>
-              <div class="tt-meta"><span class="tt-time">Final step</span></div>
+      <!-- 1. skepticism → proof -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#e44d26">J</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">leah.fits</div>
+            <div class="tt-text">nah why did this genuinely work 😭 finished 3 deals and they covered £48.23 of my basket</div>
+            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/b281cb32b1564cfbc9852e1c.jpg" alt="">
+            <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 3.2k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#7c3aed">M</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">mia_plays22</div>
+                  <div class="tt-text">how long did urs take?? im halfway through my second deal rn</div>
+                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#e44d26">J</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">leah.fits</div>
+                  <div class="tt-text">like 2 hours? did two surveys and a free trial on the bus lol</div>
+                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 203</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="tt-divider"></div>
+
+      <!-- 2. skepticism → tried it -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0891b2">L</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">noa.wardrobe</div>
+            <div class="tt-text">was calling this fake last week and now £73.50 of my haul is covered 💀</div>
+            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/8a1d484eeda2072a04b1d499.jpg" alt="">
+            <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.1k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#dc2626">K</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">kxng_builds</div>
+                  <div class="tt-text">same energy lol took me ages to actually try it</div>
+                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 67</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#0891b2">L</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">noa.wardrobe</div>
+                  <div class="tt-text">fr the scepticism is real until the money actually covers the basket</div>
+                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 312</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 3. skeptic single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#f59e0b">N</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">noobmaster_69</div>
+            <div class="tt-text">my mate’s £19.99 jumper got covered after 4 deals 😭 just started mine</div>
+            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 743</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 4. timing question -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#16a34a">S</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">soph.gaming</div>
+            <div class="tt-text">how long after the deals does it cover the basket? mines been pending since yesterday</div>
+            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 456</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#db2777">A</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">abby.irl</div>
+                  <div class="tt-text">mine took about 4 hours after the last deal</div>
+                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 78</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#ea580c">R</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">rx_buildz</div>
+                  <div class="tt-text">same day for me. finished the deals at lunch, £62.10 haul was covered by tea time</div>
+                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#16a34a">S</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">soph.gaming</div>
+                  <div class="tt-text">UPDATE they covered £36.40 of my basket 😭😭 a coat and a top</div>
+                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 489</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 5. timing single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#6366f1">T</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">tay_gamess</div>
+            <div class="tt-text">did the deals in a free period and my £27.50 jeans were covered before last lesson lol</div>
+            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 612</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 6. timing with reply -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0d9488">W</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">willgamingyt</div>
+            <div class="tt-text">quick q: does it cover the whole basket or just one item?</div>
+            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 287</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#8b5cf6">D</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">dani.rails</div>
+                  <div class="tt-text">the basket, up to £500. mine was £48.23 and the lot got covered once the deals verified</div>
+                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 156</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 7. which games -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0369a1">C</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">charliebuilds</div>
+            <div class="tt-text">which deals did everyone do? i want the quickest ones</div>
+            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 534</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#e44d26">J</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">leah.fits</div>
+                  <div class="tt-text">a survey, an app sign-up and a free trial. the survey was done in like 20 mins</div>
+                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 345</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#db2777">A</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">abby.irl</div>
+                  <div class="tt-text">the free trials are slept on fr. finished one in a single sitting</div>
+                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#0369a1">C</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">charliebuilds</div>
+                  <div class="tt-text">going with a survey and two app sign-ups then cheers 🙌</div>
+                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 45</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 8. games advice single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#b91c1c">E</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">ellie.plays</div>
+            <div class="tt-text">one of the app deals counted way faster than I expected, literally one session</div>
+            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 398</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 9. games with img reply -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#ca8a04">H</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">harryxxgaming</div>
+            <div class="tt-text">for anyone wondering: yes its real, no its not a scam, yes u need to actually finish the deals not just open them</div>
+            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.9k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#059669">G</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">gemma.irl</div>
+                  <div class="tt-text">^ this. i just downloaded 3 apps and my £54.20 basket is still sitting there 😂 u gotta finish the deals</div>
+                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 145</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#ca8a04">H</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">harryxxgaming</div>
+                  <div class="tt-text">exactly lol finish the deals properly and then it covers the haul</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/c5e70ee25ef8e7bd7d345ce6.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 267</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 10. celebration -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#9333ea">F</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">freya_cash</div>
+            <div class="tt-text">MY £86.15 HAUL IS COVERED 😭😭 i woke my sister up screaming at my phone</div>
+            <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.8k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#d946ef">P</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">phoebe_plays</div>
+                  <div class="tt-text">the way i ran to check mine after seeing this 😂</div>
+                  <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#9333ea">F</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">freya_cash</div>
+                  <div class="tt-text">did urs get covered too??</div>
+                  <div class="tt-meta"><span class="tt-time">22h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 34</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 11. proof with img -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#4f46e5">O</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">oli_master99</div>
+            <div class="tt-text">showing my group chat this thread rn like SEE i told you lot it was real</div>
+            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/0b0d3184afeb4e818b8a7d72.jpg" alt="">
+            <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.4k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#be185d">I</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">izzy.builds</div>
+                  <div class="tt-text">haha the basket totals are right here innit</div>
+                  <div class="tt-meta"><span class="tt-time">22h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 98</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 12. celebration single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0284c7">Z</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">zack_cash</div>
+            <div class="tt-text">genuinely emotional over a £41.80 basket getting covered 😭 coat and two tops</div>
+            <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 876</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 13. telling friends -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#dc2626">K</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">kxng_builds</div>
+            <div class="tt-text">sent this to the groupchat and now everyones doing the deals in maths 💀</div>
+            <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.1k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#7c3aed">M</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">mia_plays22</div>
+                  <div class="tt-text">same at ours lol the whole back row was on it 😂</div>
+                  <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#dc2626">K</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">kxng_builds</div>
+                  <div class="tt-text">3 of them already had hauls covered today, mrs davies is fuming 😂</div>
+                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 412</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 14. told family -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#ea580c">R</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">rx_buildz</div>
+            <div class="tt-text">my little sister saw £48.23 come off my basket and now she wont leave me alone asking how</div>
+            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 956</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 15. family with img reply -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#059669">G</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">gemma.irl</div>
+            <div class="tt-text">now my mums asking what those deals are because she saw me getting excited over my phone 😭</div>
+            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 567</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#6366f1">T</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">tay_gamess</div>
+                  <div class="tt-text">my nan asked me to explain it 3 times 💀</div>
+                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 321</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 16. spent the money -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#d946ef">P</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">phoebe_plays</div>
+            <div class="tt-text">first thing it covered was those £64 trainers 💀 been watching that listing for weeks</div>
+            <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.6k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#b91c1c">E</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">ellie.plays</div>
+                  <div class="tt-text">TRAINERS omg ur so lucky</div>
+                  <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 156</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#d946ef">P</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">phoebe_plays</div>
+                  <div class="tt-text">exactly!! the basket total finally dropped</div>
+                  <div class="tt-meta"><span class="tt-time">7h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 17. spending single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#8b5cf6">D</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">dani.rails</div>
+            <div class="tt-text">covered a £33 dress and still had £12.40 left on the rest of the haul, this is actually mad</div>
+            <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 723</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 18. spending with img -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#be185d">I</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">izzy.builds</div>
+            <div class="tt-text">just had my mate’s clear-out covered 😭 £91.05 and they are so confused</div>
+            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#0284c7">Z</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">zack_cash</div>
+                  <div class="tt-text">covering the whole haul is so worth it, good shout</div>
+                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 56</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#be185d">I</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">izzy.builds</div>
+                  <div class="tt-text">legit the whole basket 😂</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ae52afed386d7ebe3eda1c15.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">4h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 19. comparison to buying -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#ea580c">R</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">rx_buildz</div>
+            <div class="tt-text">bro i been trying to afford a Vinted haul for ages and ur telling me its 3 deals 💀</div>
+            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.3k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#f59e0b">N</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">noobmaster_69</div>
+                  <div class="tt-text">i counted them too 😭 it was 4 deals not even 5</div>
+                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 289</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#ea580c">R</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">rx_buildz</div>
+                  <div class="tt-text">my dad is gonna be well happy i stopped asking him to pay for the basket lmao</div>
+                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 20. comparison single -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0d9488">W</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">willgamingyt</div>
+            <div class="tt-text">i used to sit on Vinted with a full basket and no money. £500 towards it is genuinely the bit I wanted 😂</div>
+            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 678</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 21. comparison with img reply -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#0369a1">C</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">charliebuilds</div>
+            <div class="tt-text">the fact it covers the actual basket total, not some random points, mad</div>
+            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 345</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#ca8a04">H</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">harryxxgaming</div>
+                  <div class="tt-text">covering the haul is what sold me, none of that survey points nonsense</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ae39f9bb89939bf2fcd97e36.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 198</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 22. practical: mobile -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#b91c1c">E</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">ellie.plays</div>
+            <div class="tt-text">does this work on iphone? or is it android only</div>
+            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#16a34a">S</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">soph.gaming</div>
+                  <div class="tt-text">both! i did it on my iphone 13 no issues</div>
+                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 123</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#9333ea">F</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">freya_cash</div>
+                  <div class="tt-text">android here, worked fine. the deals work on both</div>
+                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 87</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 23. practical: uk -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#4f46e5">O</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">oli_master99</div>
+            <div class="tt-text">is this uk only? my cousin in australia was asking</div>
+            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 201</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 24. practical: age -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#db2777">A</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">abby.irl</div>
+            <div class="tt-text">do u need to be a certain age for this? asking for my younger sister</div>
+            <div class="tt-meta"><span class="tt-time">47m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#ca8a04">H</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">harryxxgaming</div>
+                  <div class="tt-text">think u need to be 18+ to do the deals, check the terms tho</div>
+                  <div class="tt-meta"><span class="tt-time">45m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 56</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 25. update thread -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#7c3aed">M</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">mia_plays22</div>
+            <div class="tt-text">update: finished all the deals yesterday but my £52.30 basket still isn’t covered… will update again</div>
+            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 567</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#e44d26">J</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">leah.fits</div>
+                  <div class="tt-text">give it a bit mine took overnight</div>
+                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 78</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#7c3aed">M</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">mia_plays22</div>
+                  <div class="tt-text">UPDATE 2: IT COVERED 😭😭😭 £52.30 HAUL I CANT BREATHE</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/9e97d642afe245222091adef.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 456</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 26. update with img -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#059669">G</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">gemma.irl</div>
+            <div class="tt-text">when £48.23 actually came off my basket and it was genuinely real 😭😭</div>
+            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/82f17d55f77413e6d0d6a55d.jpg" alt="">
+            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.3k</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#0891b2">L</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">noa.wardrobe</div>
+                  <div class="tt-text">this was me fr, woke the whole house up checking the order</div>
+                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 123</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#059669">G</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">gemma.irl</div>
+                  <div class="tt-text">the disbelief lasted until the haul was actually covered 😂</div>
+                  <div class="tt-meta"><span class="tt-time">4h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 27. update with img reply -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#6366f1">T</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">tay_gamess</div>
+            <div class="tt-text">day 2 update: the £67.90 is still on there lol was half expecting it to get reversed</div>
+            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#dc2626">K</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">kxng_builds</div>
+                  <div class="tt-text">lmao same i keep opening the app to check its real 😂</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ec8c9a56d96e96bb173584c6.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 198</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tt-divider"></div>
+
+      <!-- 28. someone new starting -->
+      <div class="tt-thread">
+        <div class="tt-msg">
+          <div class="tt-pfp" style="background:#d946ef">P</div>
+          <div class="tt-msg-body">
+            <div class="tt-user">phoebe_plays</div>
+            <div class="tt-text">right starting the deals rn after reading this entire comment section, wish me luck 🤞</div>
+            <div class="tt-meta"><span class="tt-time">47m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 312</span></div>
+            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
+            <div class="tt-replies">
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#e44d26">J</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">leah.fits</div>
+                  <div class="tt-text">do the survey first trust me its the fastest one</div>
+                  <div class="tt-meta"><span class="tt-time">43m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 67</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#0891b2">L</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">noa.wardrobe</div>
+                  <div class="tt-text">good luck!! come back and update us 😭</div>
+                  <div class="tt-meta"><span class="tt-time">40m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 45</span></div>
+                </div>
+              </div>
+              <div class="tt-msg reply">
+                <div class="tt-pfp" style="background:#16a34a">S</div>
+                <div class="tt-msg-body">
+                  <div class="tt-user">soph.gaming</div>
+                  <div class="tt-text">one of us one of us 😂 ull have the basket covered by tonight</div>
+                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/2e93426a197b04b842180285.jpg" alt="">
+                  <div class="tt-meta"><span class="tt-time">35m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 189</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
     </section>
 
   </main>
-  <button class="cta" id="cta" type="button" hidden>Unlock Vinted Reviewer <span aria-hidden="true">→</span></button>
-  <footer>Vinted is a trademark of Vinted, UAB. This promotion is not affiliated with or endorsed by Vinted. Playful eligibility and tracking requirements apply. Must be 18+.</footer>
+  <button class="cta" id="cta" type="button" hidden>Claim up to £500 <span aria-hidden="true">→</span></button>
+  <footer>Vinted is a trademark of Vinted, UAB. This promotion is not affiliated with or endorsed by Vinted. Must be 18+. Deal completion required. Results vary.</footer>
   <script>
     const questions = [
-      { title:'What would you review on Vinted?', sub:'Pick the collection you’d review.', options:["Women's collection","Men's collection",'Designer collection','Kids collection','Home collection'] },
-      { title:'Can you install one app to unlock it?', sub:'This is the step that unlocks Vinted Reviewer.', context:'Sign up to Playful, install one app and leave it open for at least 5 seconds. The Vinted Reviewer option appears once the install is recorded.', badge:true, options:["Yes, I'll install it now",'I can do it later today','I need to read the steps first'] },
-      { title:'How many products can you review?', sub:'After the Vinted Reviewer option is unlocked.', options:['4 products','5 products','Whatever I’m assigned'] }
+      { title:'What would the £500 go towards?', sub:'Pick the collection you’d shop.', options:["Women's collection","Men's collection",'Designer collection','Kids collection','Home collection'] },
+      { title:'Can you complete 3–5 deals to unlock it?', sub:'This is the step that releases the money.', context:'Sponsors fund the money towards your Vinted basket. Deals are app sign-ups, surveys, or free trials. Your haul is only covered after they’re verified.', badge:true, options:["Yes, I'll finish my deals today",'I can do them this week','I need to read the terms first'] },
+      { title:'What should it cover?', sub:'After the deals are verified.', options:['My whole basket','A full haul','One or two bits'] }
     ];
-    const categoryLine = {
-      "Women's collection":"the women’s collection",
-      "Men's collection":"the men’s collection",
+    const useLine = {
+      "Women's collection":"the women's collection",
+      "Men's collection":"the men's collection",
       'Designer collection':'the designer collection',
       'Kids collection':'the kids collection',
       'Home collection':'the home collection'
     };
-    const unlockLine = {
-      "Yes, I'll install it now":"You’ll complete the one-app unlock now.",
-      'I can do it later today':'You’ll complete the one-app unlock later today.',
-      'I need to read the steps first':'You’ll review the three steps before continuing.'
+    const dealLine = {
+      "Yes, I'll finish my deals today":"You’ll finish the deals today.",
+      'I can do them this week':'You’ll do the deals this week.',
+      'I need to read the terms first':'You’ll read each deal’s terms first.'
     };
-    const ratingLine = {
-      '4 products':'You selected 4 product ratings.',
-      '5 products':'You selected 5 product ratings.',
-      'Whatever I’m assigned':'You’re happy to rate whichever 4–5 products are assigned.'
+    const paceLine = {
+      'My whole basket':'It’ll cover your whole basket.',
+      'A full haul':'It’ll cover a full haul.',
+      'One or two bits':'It’ll cover one or two bits.'
     };
     let index = 0;
     const picks = [];
@@ -315,22 +996,22 @@
     function answer(choice) {
       picks[index] = choice;
       if (index < questions.length - 1) { index += 1; renderQuestion(); return; }
-      const category = categoryLine[picks[0]] || 'Vinted products';
-      const unlock = unlockLine[picks[1]] || 'Complete the one-app Playful unlock first.';
-      const ratings = ratingLine[picks[2]] || 'You’ll rate 4–5 products.';
-      document.getElementById('result-echo').textContent = 'Your reviewer category is ' + category + '. ' + unlock + ' ' + ratings;
-      document.getElementById('picked-verify').textContent = 'Sign up to Playful, install one app and keep it open for at least 5 seconds. Once that install is recorded, return to Playful and select the Vinted Reviewer option to rate 4–5 products.';
+      const cat = picks[0] || "Women's collection";
+      const when = dealLine[picks[1]] || 'You’ll complete the deals before anything is covered.';
+      const pace = paceLine[picks[2]] || 'It’ll cover your basket once the deals are done.';
+      document.getElementById('result-echo').textContent = 'You picked ' + (useLine[cat] || 'a collection') + '. ' + when + ' ' + pace;
+      document.getElementById('picked-verify').textContent = 'The £500 stays locked until the email and 3–5 deals are done. Then it covers your haul from ' + (useLine[cat] || 'that collection') + '. Read each deal’s terms so it counts.';
       quizScreen.hidden = true;
       finalScreen.hidden = false;
       document.body.classList.add('final-state');
       cta.hidden = false;
-      cta.innerHTML = 'Unlock Vinted Reviewer <span aria-hidden="true">→</span>';
+      cta.innerHTML = 'Claim up to £500 <span aria-hidden="true">→</span>';
       window.scrollTo(0, 0);
       cta.onclick = () => {
         if (cta.disabled) return;
         cta.disabled = true;
-        cta.textContent = 'Opening Playful…';
-        window.location.href = 'https://vsfall.com/click' + (window.location.search || '');
+        cta.textContent = 'Opening offer…';
+        window.location.href = 'http://t.garageredeem.com/click' + (window.location.search || '');
       };
     }
     function tick() {
